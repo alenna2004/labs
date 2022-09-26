@@ -26,11 +26,10 @@ int find_num_digit(int digit, int num){
 
 int f_num(int num){
 	int res = 0;
-	int i = 9;
-	for (i; i>0; i-=1){
+	for (int i = 9; i>0; i-=1){
 		int num_digits = find_num_digit(i, num);
 		if (num_digits){
-			for (num_digits; num_digits>0; num_digits-=1){
+			for (; num_digits>0; num_digits-=1){
 				res = res*10 + i;
 			}
 		}
@@ -54,7 +53,7 @@ int main(void){
 		int nuls = find_num_digit(0, num);
 		res = f_num(num);
 		if (nuls){
-			for (nuls; nuls>0; nuls-=1){
+			for (; nuls>0; nuls-=1){
 				res*=10;
 			}
 		}
